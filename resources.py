@@ -19,18 +19,24 @@ menu = """
 
 def Sumar():
     print("ingrese el primer numero: ")
-    num1 = float(input())
-    print("ingresa el segundo numero: ")
-    num2 = float(input())
-    print("la suma de los numeros es igual a: ", num1 + num2)
-    
+    try:
+        num1 = float(input())
+        print("ingresa el segundo numero: ")
+        num2 = float(input())
+        print("la suma de los numeros es igual a: ", num1 + num2)
+    except ValueError:
+        print("Ingresa solamente numeros")
+        Sumar()    
     
 def Restar():
     print("ingrese el primer numero: ")
-    num1 = float(input())
-    print("ingresa el segundo numero: ")
-    num2 = float(input())
-    print("la resta de los numeros es igual a: ", num1 - num2)
+    try:
+        num1 = float(input())
+        print("ingresa el segundo numero: ")
+        num2 = float(input())
+        print("la resta de los numeros es igual a: ", num1 - num2)
+    except ValueError:
+        print("Ingresa solamente numeros")
     
     
 def Multiplicar():
@@ -67,18 +73,23 @@ def Raiz():
 print("bienvenido a la calculadora basica que pidio el profe juan...")
 while True:
     print(menu)  #el valor de 'valE' es igual al valor de la entrada del usuario
-    valE = int(input())
-    if valE == 1:
-        Sumar()
-    elif valE == 2:
-        Restar()
-    elif valE == 3:
-        Multiplicar()
-    elif valE == 4:
-        Dividir()
-    elif valE == 5:
-        Potencia()
-    elif valE == 6:
-        Raiz()
-    elif valE == 0:
-        sys.exit()
+    try:
+        valE = int(input())
+        if valE == 1:
+            Sumar()
+        elif valE == 2:
+            Restar()
+        elif valE == 3:
+            Multiplicar()
+        elif valE == 4:
+            Dividir()
+        elif valE == 5:
+            Potencia()
+        elif valE == 6:
+            Raiz()
+        elif valE == 0:
+            sys.exit()
+        else:
+            print("ingresa una opcion disponible")
+    except ValueError:
+        print("ERROR!!! ingresa solo numeros")
