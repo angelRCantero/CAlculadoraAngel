@@ -2,12 +2,12 @@
 ##Empiezo con codigo basico para entender sintaxis basicas
 #comienzo con estructuras basadas en un video de internet que daba 
 # informacion de como hacer una calculadora con semantica mas avanzada pero bien explicada
-import sys
+import sys #EL SYS ES UNA LIBRERIA QUE IMPORTA LA RUTA DE SALIDA DESDE LAS OPCIONES DEL MENU DE LA CALCULADORA
 
-num1 = 0
+num1 = 0 
 num2 = 0
 
-menu = """
+menu =  """
 1: Sumar
 2: Restar
 3: Multiplicar
@@ -15,7 +15,8 @@ menu = """
 5: Potencia
 6: Raiz
 0: Salir
-"""
+""" 
+
 
 def Sumar():
     print("ingrese el primer numero: ")
@@ -27,9 +28,9 @@ def Sumar():
         print("la suma de los numeros es igual a: ", num1 + num2)
     except ValueError:#ACA SE VE EL ERROR TIPO 'VALUEERROR' QUE RECONOCE QUE EL VALOR DE ENTRADA ESTA CONDICIONADO POR EL 'FLOAT' ###
         #EXIGIENDO ESTE,UN VALOR DE TIPO NUMERICO DECIMAL,PARA ASI REACCIONAR A CUALQUIER TIPO DE ENTRADA INCORRECTA COMO POR EJEMPLO LETRAS.
-        print("ERROR!!! Ingresa solamente numeros")
-        Sumar()#LUEGO DE LA VALIDACION INTERNA POR MEDIO DEL 'TRY' SE HACE UNA LLAMADA NUEVAMENTE HACIA LA VARIABLE QUE CREAMOS,###
+        print("ERROR!!! Ingresa solamente numeros")#LUEGO DE LA VALIDACION INTERNA POR MEDIO DEL 'TRY' SE HACE UNA LLAMADA NUEVAMENTE HACIA LA VARIABLE QUE CREAMOS,###
         #COMO EN ESTE CASO LA VAR 'SUMAR' PARA QUE CON ESTE PROCESO NO SE CIERRE NUESTRA CALCULADORA
+        Sumar()
         
 def Restar():
     print("ingrese el primer numero: ")
@@ -116,9 +117,10 @@ while True:
         elif valE == 6:
             Raiz()
         elif valE == 0:
-            sys.exit()
+            sys.exit()#EL SYS LE DARA EL ESCAPE DE RUTINA A LA CALCULADORA
         else:
             print("ingresa una opcion disponible")
     except ValueError:#EL 'EXCEPT GENERA EL TIPO DE ERROR DENTRO DE LOS VALORES DISPONIBLES DEL 'INT' CON LAS OPCIONES DISPONIBLES###
         print("ERROR!!! ingresa solo numeros")#DEL 1 AL 6 INCLUYENDO EL 0 COMO CIERRE DEL PROGRAMA,QUE DE NO SER UNA DE LAS DISPONIBLES###
-        #USARA EL 'PRINT' PARA DAR EL MENSAJE QUE LA ENTRADA NO CONDICE CON UNA OPCION DISPONIBLE
+        #O NO SEA UN NUMERO ENTERO USARA EL 'PRINT' PARA DAR EL MENSAJE QUE LA ENTRADA NO CONDICE CON UNA OPCION DISPONIBLE
+        
